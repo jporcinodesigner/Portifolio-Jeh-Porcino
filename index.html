@@ -143,142 +143,6 @@
         }
 
         /* ==========================================================================
-            PÁGINA 2: SOBRE MIM
-            ========================================================================== */
-        .about-container {
-            display: flex;
-            flex-direction: column;
-            gap: 2.5rem;
-        }
-
-        .about-text p {
-            color: var(--color-text-secondary);
-            margin-bottom: 1.5rem;
-            font-weight: 300;
-            font-size: 1.05rem;
-            text-align: justify;
-        }
-
-        .about-image-wrapper {
-            width: 100%;
-            max-width: 450px;
-            margin: 0 auto;
-        }
-
-        .responsive-img {
-            border-radius: 12px;
-            border: var(--border-style);
-            width: 100%;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-        }
-
-        /* ==========================================================================
-            PÁGINAS VISUAIS & WEB (SERVIÇOS)
-            ========================================================================== */
-        .services-section h2 {
-            text-align: center;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            margin-top: 3rem;
-        }
-
-        .service-card {
-            background-color: var(--color-card);
-            padding: 2.5rem 2rem;
-            border-radius: 8px;
-            border: var(--border-style);
-            transition: transform 0.3s, border-color 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            border-color: #333;
-        }
-
-        .service-icon {
-            font-size: 2.2rem;
-            margin-bottom: 1.25rem;
-            color: var(--color-text-primary);
-        }
-
-        .service-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.8rem;
-        }
-
-        .service-card p {
-            color: var(--color-text-secondary);
-            font-size: 0.95rem;
-            font-weight: 300;
-        }
-
-        /* ==========================================================================
-            CASES DE SUCESSO
-            ========================================================================== */
-        .portfolio-section h2 {
-            text-align: center;
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .portfolio-item {
-            background-color: var(--color-card);
-            border-radius: 8px;
-            overflow: hidden;
-            border: var(--border-style);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .portfolio-img-wrapper {
-            width: 100%;
-            height: 220px;
-            overflow: hidden;
-            background-color: #141414;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .portfolio-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .portfolio-item:hover .portfolio-img {
-            transform: scale(1.04);
-        }
-
-        .portfolio-info {
-            padding: 1.5rem;
-            background-color: var(--color-card);
-            margin-top: auto;
-        }
-
-        .portfolio-info h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.3rem;
-        }
-
-        .case-category {
-            color: var(--color-text-secondary);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* ==========================================================================
             CONTATO & FORMULÁRIO (INTEGRADO AO SHEETMONKEY COM TODAS AS COLUNAS)
             ========================================================================== */
         .contact-container {
@@ -346,7 +210,7 @@
     </header>
 
     <main>
-        <!-- Seção de Contato / Briefing -->
+        <!-- Seção de Contato / Briefing Mapeado da Planilha -->
         <section id="contato" class="contact-section">
             <div class="contact-container">
                 <div class="contact-info">
@@ -356,52 +220,67 @@
 
                 <form id="whatsappForm" class="contact-form" action="https://api.sheetmonkey.io/form/2HdteMvA7JR8yEhrfBhR4H" method="POST">
                     
+                    <!-- Coluna: Nome -->
                     <div class="form-group">
-                        <label for="name">Seu Nome</label>
+                        <label for="name">Nome</label>
                         <input type="text" id="name" name="Nome" placeholder="Como podemos te chamar?" required>
                     </div>
 
+                    <!-- Coluna: Email -->
                     <div class="form-group">
-                        <label for="email">Seu E-mail</label>
+                        <label for="email">Email</label>
                         <input type="email" id="email" name="Email" placeholder="seu@email.com" required>
                     </div>
 
+                    <!-- Coluna: Telefone -->
                     <div class="form-group">
                         <label for="phone">Telefone</label>
                         <input type="tel" id="phone" name="Telefone" placeholder="(67) 99999-9999" required>
                     </div>
 
-                    <!-- Campo oculto para atender a coluna x-redirect do SheetMonkey se necessário -->
+                    <!-- Coluna: x-redirect (Campo Oculto Técnico) -->
                     <input type="hidden" name="x-redirect" value="">
 
+                    <!-- Coluna: Tipo de Projeto (Dropdown / Tabela Flutuante) -->
                     <div class="form-group">
                         <label for="tipo_projeto">Tipo de Projeto</label>
-                        <input type="text" id="tipo_projeto" name="Tipo de Projeto" placeholder="Ex: Landing Page, Identidade Visual..." required>
+                        <select id="tipo_projeto" name="Tipo de Projeto" required>
+                            <option value="" disabled selected>Selecione o serviço desejado</option>
+                            <option value="Landing Page / Site">Landing Page / Site</option>
+                            <option value="Identidade Visual / Logotipo">Identidade Visual / Logotipo</option>
+                            <option value="Cardápio Interativo">Cardápio Interativo</option>
+                            <option value="Convites">Convites</option>
+                            <option value="Materiais Gráficos">Materiais Gráficos</option>
+                        </select>
                     </div>
 
+                    <!-- Coluna: Nicho -->
                     <div class="form-group">
                         <label for="nicho">Nicho</label>
-                        <input type="text" id="nicho" name="Nicho" placeholder="Ex: Hamburgueria, Odontologia..." required>
+                        <input type="text" id="nicho" name="Nicho" placeholder="Ex: Hamburgueria, Odontologia, Autônomo..." required>
                     </div>
 
+                    <!-- Coluna: Possui Identidade Visual (Dropdown / Tabela Flutuante) -->
                     <div class="form-group">
                         <label for="identidade">Possui Identidade Visual?</label>
                         <select id="identidade" name="Possui Identidade Visual" required>
                             <option value="" disabled selected>Selecione uma opção</option>
                             <option value="Sim">Sim</option>
                             <option value="Não">Não</option>
-                            <option value="Preciso criar">Preciso criar / modernizar</option>
+                            <option value="Preciso criar / modernizar">Preciso criar / modernizar</option>
                         </select>
                     </div>
 
+                    <!-- Coluna: Funcionalidades -->
                     <div class="form-group">
                         <label for="funcionalidades">Funcionalidades</label>
-                        <textarea id="funcionalidades" name="Funcionalidades" rows="3" placeholder="Como posso te ajudar? Descreva os detalhes..."></textarea>
+                        <textarea id="funcionalidades" name="Funcionalidades" rows="3" placeholder="Descreva detalhes ou funcionalidades especiais desejadas..."></textarea>
                     </div>
 
+                    <!-- Coluna: Referências -->
                     <div class="form-group">
                         <label for="referencias">Referências</label>
-                        <input type="text" id="referencias" name="Referências" placeholder="Links ou estilos de inspiração">
+                        <input type="text" id="referencias" name="Referências" placeholder="Cole links de sites ou estilos de inspiração">
                     </div>
 
                     <button type="submit" id="submitBtn" style="width: 100%; text-align: center; cursor: pointer; font-weight: bold; background: #ffffff; color: #000000; border: none; padding: 1rem; border-radius: 6px; text-transform: uppercase; letter-spacing: 1px;">Enviar</button>
@@ -411,7 +290,7 @@
     </main>
 
     <script>
-        // Integração completa salvando na planilha do SheetMonkey e redirecionando para o WhatsApp
+        // Integração salvando na planilha do SheetMonkey e redirecionando para o WhatsApp com os dados
         document.getElementById('whatsappForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
