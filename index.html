@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
+        /* ==========================================================================
+            VARIÁVEIS DE DESIGN E CONFIGURAÇÕES GLOBAIS (ESTILO BLACK)
+            ========================================================================== */
         :root {
             --font-titles: 'Syne', sans-serif;
             --font-body: 'Inter', sans-serif;
@@ -19,9 +22,15 @@
             --border-style: 1px solid #1f1f1f;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             background-color: var(--color-bg);
@@ -37,8 +46,15 @@
             line-height: 1.2;
         }
 
-        img { max-width: 100%; height: auto; display: block; }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
 
+        /* ==========================================================================
+            HEADER & NAVEGAÇÃO (EFEITO BLUR PREMIUM)
+            ========================================================================== */
         header {
             background-color: rgba(11, 11, 11, 0.95);
             position: fixed;
@@ -58,7 +74,11 @@
             gap: 0.8rem;
         }
 
-        .logo-wrapper { display: flex; align-items: center; gap: 0.7rem; }
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+        }
 
         .brand-name {
             font-family: var(--font-titles);
@@ -67,7 +87,11 @@
             font-size: 1.2rem;
         }
 
-        nav ul { display: flex; gap: 1.2rem; list-style: none; }
+        nav ul {
+            display: flex;
+            gap: 1.2rem;
+            list-style: none;
+        }
 
         nav a {
             color: var(--color-text-secondary);
@@ -79,11 +103,17 @@
             transition: color 0.3s;
         }
 
-        nav a:hover { color: var(--color-accent); }
+        nav a:hover {
+            color: var(--color-accent);
+        }
 
-        main { padding-top: 5rem; }
+        main {
+            padding-top: 5rem;
+        }
 
-        section { padding: 5rem 1.5rem; }
+        section {
+            padding: 5rem 1.5rem;
+        }
 
         .section-title {
             font-size: 2rem;
@@ -92,6 +122,9 @@
             letter-spacing: 1px;
         }
 
+        /* ==========================================================================
+            PÁGINA 1: HERO SECTION (BANNER DO TOPO)
+            ========================================================================== */
         .hero-section {
             width: 100%;
             min-height: auto;
@@ -102,8 +135,16 @@
             padding: 0;
         }
 
-        .hero-banner-img { width: 100%; height: auto; max-width: 100%; display: block; }
+        .hero-banner-img {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            display: block;
+        }
 
+        /* ==========================================================================
+            CONTATO & FORMULÁRIO (INTEGRADO AO SHEETMONKEY)
+            ========================================================================== */
         .contact-container {
             display: flex;
             flex-direction: column;
@@ -118,7 +159,9 @@
             font-weight: 300;
         }
 
-        .form-group { margin-bottom: 1.5rem; }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
 
         label {
             display: block;
@@ -141,11 +184,14 @@
             transition: border-color 0.3s;
         }
 
-        input:focus, textarea:focus, select:focus { border-color: #ffffff; }
+        input:focus, textarea:focus, select:focus {
+            border-color: #ffffff;
+        }
     </style>
 </head>
 <body>
 
+    <!-- Header -->
     <header>
         <div class="header-container">
             <div class="logo-wrapper">
@@ -172,26 +218,30 @@
                     <p>Preencha o formulário para iniciarmos um projeto.</p>
                 </div>
 
-                <form id="whatsappForm" class="contact-form" action="https://api.sheetmonkey.io/form/2HdteMvA7JR8yEhrfBhR4H" method="POST">
+                <form id="whatsappForm" class="contact-form" action="https://api.sheetmonkey.io/form/irCsu4oiUMbdQpT6nKSRUW" method="POST">
 
+                    <!-- Coluna: Nome -->
                     <div class="form-group">
                         <label for="name">Nome</label>
                         <input type="text" id="name" name="Nome" placeholder="Como podemos te chamar?" required>
                     </div>
 
+                    <!-- Coluna: Email -->
                     <div class="form-group">
                         <label for="email">E-mail</label>
                         <input type="email" id="email" name="Email" placeholder="seu@email.com" required>
                     </div>
 
+                    <!-- Coluna: Telefone -->
                     <div class="form-group">
                         <label for="phone">Telefone</label>
                         <input type="tel" id="phone" name="Telefone" placeholder="(67) 99999-9999" required>
                     </div>
 
-                    <!-- Campo oculto técnico -->
+                    <!-- Coluna: x-redirect (campo oculto técnico) -->
                     <input type="hidden" name="x-redirect" value="">
 
+                    <!-- Coluna: Tipo de Projeto -->
                     <div class="form-group">
                         <label for="tipo_projeto">Tipo de Projeto</label>
                         <select id="tipo_projeto" name="Tipo de Projeto" required>
@@ -204,11 +254,13 @@
                         </select>
                     </div>
 
+                    <!-- Coluna: Nicho -->
                     <div class="form-group">
                         <label for="nicho">Nicho</label>
                         <input type="text" id="nicho" name="Nicho" placeholder="Ex: Hamburgueria, Odontologia, Autônomo..." required>
                     </div>
 
+                    <!-- Coluna: Possui Identidade Visual -->
                     <div class="form-group">
                         <label for="identidade">Possui Identidade Visual?</label>
                         <select id="identidade" name="Possui Identidade Visual" required>
@@ -219,11 +271,13 @@
                         </select>
                     </div>
 
+                    <!-- Coluna: Funcionalidades -->
                     <div class="form-group">
                         <label for="funcionalidades">Funcionalidades</label>
                         <textarea id="funcionalidades" name="Funcionalidades" rows="3" placeholder="Descreva detalhes ou funcionalidades especiais desejadas..."></textarea>
                     </div>
 
+                    <!-- Coluna: Referências -->
                     <div class="form-group">
                         <label for="referencias">Referências</label>
                         <input type="text" id="referencias" name="Referências" placeholder="Cole links de sites ou estilos de inspiração">
@@ -247,11 +301,12 @@
             const formData = new FormData(this);
 
             try {
-                await fetch('https://api.sheetmonkey.io/form/2HdteMvA7JR8yEhrfBhR4H', {
+                await fetch('https://api.sheetmonkey.io/form/irCsu4oiUMbdQpT6nKSRUW', {
                     method: 'POST',
                     body: formData
                 });
             } catch (error) {
+                // Mesmo se falhar o registro na planilha, o cliente segue para o WhatsApp
                 console.error("Erro ao salvar na planilha:", error);
             }
 
